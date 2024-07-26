@@ -1,0 +1,415 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13400\viewh16620\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 DING JEN HAN \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 PCWEB04 - Exercise 1 -7\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f1\b \cf0 Exercise 01\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\b0 \cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+# Exercise 1.1\
+# Retrieve all information from books \
+SELECT * FROM books;\
+\
+# Exercise 1.2\
+# Retrieve all information from books\
+SELECT title, year FROM books;\
+\
+# Exercise 1.3\
+# Retrieve all information from books for year after 2000\
+SELECT * FROM books WHERE year > 2000;\
+\
+# Exercise 1.4\
+# Retrieve all information from books for year before 2000\
+SELECT * FROM books WHERE year < 2000;\
+\
+# Exercise 1.5\
+# Retrieve all information from books for genre equals to 'fiction'\
+SELECT * FROM books WHERE genre = 'fiction';\
+\
+# Exercise 1.6\
+# Retrieve all title and author from books for year after 2000 and for year before 2004\
+SELECT title, author FROM books WHERE year BETWEEN 2000 AND 2004;\
+\
+# Exercise 1.7\
+# Retrieve all title, author and year from books for year after 2000 and genre equals to 'fiction'\
+SELECT title, author, year FROM books WHERE year > 2000 AND genre = 'fiction';\
+\
+# Exercise 1.8\
+# Retrieve all title and author from books for year after 2000 or year before 2004\
+SELECT title, author FROM books WHERE year > 2000 OR year < 2004;\
+\
+# Exercise 1.9\
+# Retrieve all title, author and year from books for year NOT earlier than 2004 \
+SELECT title, author, year FROM books WHERE NOT year < 2004;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f1\b \cf0 Exercise 02\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\b0 \cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+CREATE DATABASE movie_review;\
+\
+USE movie_review;\
+\pard\pardeftab720\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+\
+# UserInfo #\
+\
+CREATE TABLE userinfo(\
+    user_id INT PRIMARY KEY AUTO_INCREMENT,\
+    username VARCHAR(30) UNIQUE,\
+    password VARCHAR(30)\
+);\
+INSERT INTO userinfo VALUES(NULL,"user1","password1");\
+INSERT INTO userinfo VALUES(NULL,"user2","password2");\
+INSERT INTO userinfo VALUES(NULL,"user3","password3");\
+INSERT INTO userinfo VALUES(NULL,"user4","password4");\
+INSERT INTO userinfo VALUES(NULL,"user5","password5");\
+\
+# Movies #\
+\
+CREATE TABLE movies(\
+    movie_id INT PRIMARY KEY AUTO_INCREMENT,\
+    movie_name VARCHAR(30)\
+);\
+INSERT INTO movies VALUES(NULL,"movie1");\
+INSERT INTO movies VALUES(NULL,"movie2");\
+INSERT INTO movies VALUES(NULL,"movie3");\
+INSERT INTO movies VALUES(NULL,"movie4");\
+INSERT INTO movies VALUES(NULL,"movie5");\
+\
+# Movie Reviews #\
+\
+CREATE TABLE movie_reviews(\
+    user_id INT,\
+    movie_id INT,\
+    ratings DEC(2,1),\
+    PRIMARY KEY(user_id,movie_id),\
+    FOREIGN KEY(user_id) REFERENCES userinfo(user_id) ON DELETE CASCADE,\
+    FOREIGN KEY(movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE,\
+    CHECK (ratings <= 5.0)\
+);\
+INSERT INTO movie_reviews VALUES(1,1,4.5);\
+INSERT INTO movie_reviews VALUES(1,3,3.0);\
+INSERT INTO movie_reviews VALUES(2,1,4.7);\
+INSERT INTO movie_reviews VALUES(3,5,2.5);\
+INSERT INTO movie_reviews VALUES(4,4,4.1);\
+\
+\
+# User Relation #\
+\
+CREATE TABLE user_relation(\
+    follower_id INT,\
+    followee_id INT,\
+    PRIMARY KEY(follower_id, followee_id),\
+    FOREIGN KEY(follower_id) REFERENCES userinfo(user_id) ON DELETE CASCADE,\
+    FOREIGN KEY (followee_id) REFERENCES userinfo(user_id) ON DELETE CASCADE\
+);\
+INSERT INTO user_relation VALUES(1,2);\
+INSERT INTO user_relation VALUES(1,3);\
+INSERT INTO user_relation VALUES(2,1);\
+INSERT INTO user_relation VALUES(3,1);\
+INSERT INTO user_relation VALUES(4,5);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\b Exercise 03 A\
+
+\f0\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+# Exercise 3.1\
+# Retrieve all genre and average year from books and group it by genre\
+SELECT genre, AVG(year) FROM books GROUP BY genre;\
+\
+# Exercise 3.2\
+# Retrieve all genre and largest year from books and group it by genre\
+SELECT genre, MAX(year) FROM books GROUP BY genre;\
+\
+# Exercise 3.3\
+# Retrieve all genre and smallest year from books and group it by genre\
+SELECT genre, MIN(year) from books GROUP BY genre;\
+\
+# Exercise 3.4\
+# Retrieve all information from books sorting it by the latest year first\
+SELECT * FROM books ORDER BY year DESC;\
+\
+# Exercise 3.5\
+# Retrieve all information from books sorting it by the latest year first, and next, alphabetically by author\
+SELECT * FROM books ORDER BY year DESC, author ASC;\
+\
+# Exercise 3.6\
+# Retrieve all genre and year from books sorting it by the genre first, and next, latest year\
+SELECT genre, year FROM books ORDER BY genre ASC, year DESC;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\b Exercise 03 B\
+
+\f0\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+<\'97 Book Review \'97>\
+\pard\pardeftab720\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 # Exercise 3B.1\
+# Insert the 2 new records for the books and reviews tables\
+\
+INSERT INTO books(id, title, author, year, genre, sub_genre) \
+VALUES(16, 'Book 01', 'Author 01', 2020, 'Genre 01', 'Sub 01');\
+\
+INSERT INTO books(id, title, author, year, genre, sub_genre) \
+VALUES(17, 'Book 02', 'Author 02', 2021, 'Genre 02', 'Sub 02');\
+\
+# Exercise 3B.2\
+# Update the 2 new records for the books and reviews tables\
+UPDATE books SET year = 2022 WHERE id = 16;\
+UPDATE books SET year = 2023 WHERE id = 17;\
+\
+# Exercise 3B.3\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 # Delete the 2 new records for the books and reviews tables\
+DELETE FROM books WHERE id = 16;\
+DELETE FROM books WHERE id = 17; \
+\
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 <\'97 Movie Review \'97>\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 # Exercise 3B.4\
+# Retrieve all movie names using the wildcard for movies ending with a 2\
+SELECT movie_name FROM movies WHERE movie_name LIKE '%2';\
+\
+# Exercise 3B.5\
+# Retrieve all movie names using the wildcard for movies containing "ovi"\
+SELECT movie_name FROM movies WHERE movie_name LIKE '%ovi%';\
+\
+# Exercise 3B.6\
+# Retrieve all movie names using the wildcard for movies beginning with "m"\
+SELECT movie_name FROM movies WHERE movie_name LIKE 'm%';\
+\
+# Exercise 3B.7\
+# Retrieve all users using the wildcard for passwords having "p"\
+SELECT username FROM userinfo WHERE password LIKE '%p%';\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\b Exercise 04 A\
+
+\f0\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \
+# Exercise 4A.1\
+# Count the number of reviews for movie1\
+SELECT COUNT(*) FROM movie_reviews WHERE movie_id = 1;\
+\
+# Exercise 4A.2\
+# Select all reviews by those that user1 is following, showing user_id, movie_id and ratings\
+\
+SELECT mr.user_id, mr.movie_id, mr.ratings FROM movie_reviews AS mr\
+WHERE mr.user_id IN (\
+    SELECT ur.followee_id FROM user_relation AS ur \
+    WHERE ur.follower_id = 1);\
+\
+# Exercise 4A.3\
+# Select all reviews by those that user1 is following, showing user_id, movie_id and ratings\
+# Additional exercise: Select movie_name as well\
+\
+SELECT mr.user_id, mr.movie_id, mr.ratings, m.movie_name\
+FROM movie_reviews AS mr\
+LEFT JOIN movies AS m \
+ON mr.movie_id = m.movie_id\
+WHERE mr.user_id IN (\
+    SELECT ur.followee_id \
+    FROM user_relation AS ur \
+    WHERE ur.follower_id = 1);\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\b Exercise 04 B\
+
+\f0\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+# Exercise 4B.1\
+# Retrieve all titles and average rating from books\
+SELECT b.title, r.average_rating\
+FROM books AS b\
+LEFT JOIN reviews AS r\
+ON b.id = r.book_id;\
+\
+# Exercise 4B.2\
+# Retrieve the authors and ratings for books that had ratings above 4.4\
+SELECT b.author, r.average_rating\
+FROM books AS b\
+LEFT JOIN reviews AS r\
+ON b.id = r.book_id\
+WHERE r.average_rating > 4.4;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\b Exercise 05\
+
+\f0\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+# Exercise 5.1 \
+# List all of the station names alphabetically\
+SELECT name FROM stations ORDER BY name ASC;\
+\
+# Exercise 5.2\
+# Find all of the ids and durations of trips with a duration longer than 500 minutes ordered by decreasing duration\
+SELECT trip_id, duration FROM trips WHERE duration > 500 ORDER BY duration DESC;\
+\
+# Exercise 5.3\
+# Identify all of the trips that the bike with bike_id 450 completed\
+# listing start_dates and start_stations in ascending order\
+SELECT start_date, start_station FROM trips WHERE bike_id = 450 ORDER BY start_date ASC, start_station ASC;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\b Exercise 06\
+
+\f0\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\f2\fs22 \cf3 \CocoaLigature0 <\'97 Create Tables \'97>\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+CREATE TABLE employees (\
+emp_id INT NOT NULL AUTO_INCREMENT,\
+name VARCHAR(50),\
+salary INT,\
+super_ID INT,\
+PRIMARY KEY (emp_id),\
+FOREIGN KEY (super_id) REFERENCES employees (emp_id) ON DELETE SET NULL\
+) ENGINE = InnoDB;\
+\
+CREATE TABLE clients(\
+client_id INT NOT NULL AUTO_INCREMENT,\
+client_name VARCHAR(50),\
+PRIMARY KEY (client_id)\
+) ENGINE = InnoDB;\
+\
+CREATE TABLE works_with (\
+emp_id INT NOT NULL,\
+client_id INT NOT NULL,\
+total_sales INT NOT NULL,\
+PRIMARY KEY (emp_id, client_id),\
+FOREIGN KEY (emp_id) REFERENCES employees (emp_id) ON DELETE CASCADE,\
+FOREIGN KEY (client_id) REFERENCES clients (client_id) ON DELETE CASCADE\
+) ENGINE = InnoDB;\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+<\'97 Exercise 6 \'97>\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+# Exercise 6\
+# Select employees whose salary is more than 90000\
+SELECT * FROM employees WHERE salary > 90000;\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\b Exercise 07\
+
+\f0\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f2\fs22 \cf3 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+# Exercise 7\
+# Select employees\'92 ids/names and their clients\'92 ids/names \
+# whose total sales amount to more than 100000\
+SELECT em.emp_id, em.name, ct.client_id, ct.client_name, ww.total_sales\
+FROM works_with AS ww\
+LEFT JOIN employees AS em\
+ON ww.emp_id = em.emp_id\
+LEFT JOIN clients AS ct\
+ON ww.client_id = ct.client_id\
+WHERE ww.total_sales > 100000;\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\b END\
+
+\f0\b0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f2\fs22 \cf3 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Using MySQL command line with MAMP\
+To use the MySQL command line with MAMP or MAMP PRO, perform the following steps:\
+\
+1. Start MAMP or MAMP PRO\
+2. Start the server\
+3. Open Terminal (Applications -> Utilities)\
+Type in: (one line)\
+\uc0\u8232 /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
